@@ -1,18 +1,12 @@
 package antijuan.beidanci;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import antijuan.beidanci.dao.UserDao;
 import antijuan.beidanci.entity.User;
 
@@ -20,6 +14,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText name = null;
     EditText username = null;
     EditText password = null;
+    EditText passwordAgain = null;
     EditText phone = null;
     EditText age = null;
     @Override
@@ -30,26 +25,35 @@ public class RegisterActivity extends AppCompatActivity {
         name = findViewById(R.id.name);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
+        passwordAgain = findViewById(R.id.password_again);
+
         phone = findViewById(R.id.phone);
         age = findViewById(R.id.age);
     }
 
+    public void reLogin(View view){
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+    }
+
 
     public void register(View view){
-
         String cname = name.getText().toString();
         String cusername = username.getText().toString();
         String cpassword = password.getText().toString();
+        String cpasswordAgain = passwordAgain.getText().toString();
 
         System.out.println(phone.getText().toString());
 
         String cphone = phone.getText().toString();
         int cgae = Integer.parseInt(age.getText().toString());
 
+        if(!cpassword.equals(cpasswordAgain)){
+            Toast.makeText(getApplicationContext(),"两次密码输入不相同",Toast.LENGTH_LONG).show();
+            return;
+        }
         if(cname.length() < 2 || cusername.length() < 2 || cpassword.length() < 2 ){
             Toast.makeText(getApplicationContext(),"输入信息不符合要求请重新输入",Toast.LENGTH_LONG).show();
             return;
-
         }
 
 

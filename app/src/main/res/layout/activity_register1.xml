@@ -1,164 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity">>
 
+    <!--使用线性布局-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="219dp"
-        tools:layout_editor_absoluteY="207dp"
-        android:padding="50dp"
+        android:background="#F5F5F5">
 
-        >
-
-        <LinearLayout
+        <!--Logo-->
+        <ImageView
+            android:id="@+id/LogoImage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:text="账号：" />
-
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="15sp"
-                android:text="昵称：" />
-
-            <EditText
-                android:id="@+id/username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-
-                android:textSize="15sp"
-                android:text="密码："
-
-                />
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPassword"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-
-                android:textSize="15sp"
-                android:text="手机："
-
-                />
-
-            <EditText
-                android:id="@+id/phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="phone"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-
-                android:textSize="15sp"
-                android:text="年龄："
-
-                />
-
-            <EditText
-                android:id="@+id/age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="number"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-
-        </LinearLayout>
-
-        <Button
+            android:layout_height="120dp"
             android:layout_marginTop="50dp"
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="注册"
-            android:onClick="register"
-            />
+            android:src="@mipmap/ic_logo_round"/>
 
-        <Button
-            android:id="@+id/button3"
+        <!--标题-->
+        <TextView
+            android:id="@+id/TitleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="重置" />
+            android:layout_margin="20dp"
+            android:text="反卷单词"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textColor="#808080"
+            android:textSize="30dp" />
+        <!--口号-->
+        <TextView
+            android:id="@+id/SloganText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:text="更快！ 更强！ 更卷！"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textColor="#808080"
+            android:textSize="15dp" />
+
+        <!--嵌套线性布局-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--嵌套线性布局-->
+            <LinearLayout
+                android:id="@+id/UserNameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <!--用户名输入-->
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@xml/translucent_edit"
+                    android:hint="请输入用户名"
+                    android:textSize="24dp"
+                    android:singleLine="true" />
+            </LinearLayout>
+            <!--嵌套线性布局-->
+            <LinearLayout
+                android:id="@+id/NameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <!--账号输入-->
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@xml/translucent_edit"
+                    android:hint="请输入账号"
+                    android:textSize="24dp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <!--嵌套线性布局-->
+            <LinearLayout
+                android:id="@+id/PassWordLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--密码输入-->
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@xml/translucent_edit"
+                    android:hint="输入密码"
+                    android:textSize="24dp"
+                    android:maxLength="16"
+                    android:singleLine="true"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <!--嵌套线性布局-->
+            <LinearLayout
+                android:id="@+id/PasswordAgainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--二次密码输入-->
+                <EditText
+                    android:id="@+id/password_again"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@xml/translucent_edit"
+                    android:hint="再次输入密码"
+                    android:maxLength="16"
+                    android:textSize="24dp"
+                    android:singleLine="true"
+                    android:inputType="textPassword" />
+
+            </LinearLayout>
+
+            <!--嵌套线性布局-->
+            <LinearLayout
+                android:id="@+id/PhoneLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--手机号输入-->
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@xml/translucent_edit"
+                    android:hint="请输入手机号"
+                    android:textSize="24dp"
+                    android:maxLength="16"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/AgeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!--年龄输入-->
+                <EditText
+                    android:id="@+id/age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@xml/translucent_edit"
+                    android:hint="请输入年龄"
+                    android:textSize="24dp"
+                    android:maxLength="16"
+                    android:singleLine="true" />
+            </LinearLayout>
+            <!--嵌套线性布局-->
+            <LinearLayout
+                android:id="@+id/ButtonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--立即注册按钮-->
+                <Button
+                    android:id="@+id/SignUpButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="@xml/translucent_button"
+                    android:text="立即注册"
+                    android:textColor="@color/white"
+                    android:onClick="register"
+                    android:textSize="24dp" />
+
+                <!--返回登录按钮-->
+                <Button
+                    android:id="@+id/BackLoginButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:background="@xml/translucent_button"
+                    android:text="返回登录"
+                    android:onClick="reLogin"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
