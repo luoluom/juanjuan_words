@@ -2,11 +2,12 @@
     <string name="app_name">反卷单词</string>
     <string name="title_home">背单词</string>
     <string name="title_dashboard">单词表</string>
-    <string name="title_notifications">我的</string>
+    <string name="title_notifications">记录</string>
     <string name="confirm">确定</string>
     <string name="see_annswer">看答案</string>
     <string name="myself_all_num">总背单词数</string>
     <string name="myself_today_num">今日背单词数</string>
     <string name="inspiration">今天也要加油哦！</string>
     <string name="copyright_information">Design by antijuan-group</string>
+    <string name="title_mine">我的</string>
 </resources>

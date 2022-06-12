@@ -148,4 +148,5 @@
     <color name="gray_8f">#8f8f8f</color><!--灰色8f -->
     <color name="stdcolor">#0e932e</color><!-- 标准色（图标主色）-->
     <color name="stdhalfwhite">#88FFFFFF</color><!--半透明白 -->
+    <color name="bulepurple">#6360FF</color><!--蓝紫色 -->
 </resources>

@@ -22,7 +22,7 @@ public class JDBCUtils {
 
             // 反复尝试连接，直到连接成功后退出循环
             try {
-                conn = DriverManager.getConnection("jdbc:mysql://10.16.142.208:3306/min","root","123456");
+                conn = DriverManager.getConnection("jdbc:mysql://192.168.43.166:3306/min","root","123456");
             }catch (Exception exception){
                 exception.printStackTrace();
             }

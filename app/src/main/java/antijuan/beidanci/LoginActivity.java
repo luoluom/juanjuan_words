@@ -34,10 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         EditText EditTextname = (EditText)findViewById(R.id.name);
         EditText EditTextpassword = (EditText)findViewById(R.id.password);
 
-        new Thread(){
+        new Thread(new Runnable() {
             @Override
             public void run() {
-
                 UserDao userDao = new UserDao();
 
                 boolean aa = userDao.login(EditTextname.getText().toString(),EditTextpassword.getText().toString());
@@ -50,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
             }
-        }.start();
+        }).start();
 
 
     }
